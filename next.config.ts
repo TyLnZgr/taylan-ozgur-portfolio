@@ -1,5 +1,9 @@
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = { output: 'export', images: { unoptimized: true } };
+const nextConfig: NextConfig = {
+  output: 'export',
+  images: { unoptimized: true },
+  assetPrefix: process.env.GITHUB_PAGES === 'true' ? '/taylan-ozgur-portfolio' : undefined,
+};
 
 export default nextConfig;

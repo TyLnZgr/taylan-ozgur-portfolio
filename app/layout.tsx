@@ -12,23 +12,30 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const siteUrl = process.env.GITHUB_PAGES === 'true'
+  ? 'https://tylnzgr.github.io/taylan-ozgur-portfolio/'
+  : 'https://taylan-ozgur-portfolio.shrewd-haven-4337.chatgpt.site/';
+const socialImage = new URL('og.png', siteUrl).toString();
+const favicon = new URL('favicon.svg', siteUrl).toString();
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://taylan-ozgur-portfolio.shrewd-haven-4337.chatgpt.site'),
+  metadataBase: new URL(siteUrl),
   title: 'Taylan Özgür Taşkırdı | Frontend Engineer',
   description: 'Taylan Özgür Taşkırdı is a frontend engineer building intuitive interfaces for complex products with React, Next.js, and TypeScript.',
-  alternates: { canonical: 'https://taylan-ozgur-portfolio.shrewd-haven-4337.chatgpt.site' },
+  alternates: { canonical: siteUrl },
+  icons: { icon: favicon },
   openGraph: {
     title: 'Taylan Özgür Taşkırdı | Frontend Engineer',
     description: 'Frontend engineer building intuitive interfaces for complex products.',
     type: 'website',
-    url: 'https://taylan-ozgur-portfolio.shrewd-haven-4337.chatgpt.site',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Taylan Özgür Taşkırdı — Frontend Engineer' }],
+    url: siteUrl,
+    images: [{ url: socialImage, width: 1200, height: 630, alt: 'Taylan Özgür Taşkırdı — Frontend Engineer' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Taylan Özgür Taşkırdı | Frontend Engineer',
     description: 'Frontend engineer building intuitive interfaces for complex products.',
-    images: ['/og.png'],
+    images: [socialImage],
   },
 };
 

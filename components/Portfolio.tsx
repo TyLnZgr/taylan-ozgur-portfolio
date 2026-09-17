@@ -22,7 +22,8 @@ function SectionTitle({ id, number, label, title, intro }: { id: string; number:
 }
 
 function ProjectVisual({ visual, name, type }: { visual: string; name: string; type: string }) {
-  const image = visual === "commerce" ? "/projects/ecommerce.jpg" : visual === "oasis" ? "/projects/wild-oasis.jpg" : visual === "phoenix" ? "/projects/phoenix.jpg" : null;
+  const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const image = visual === "commerce" ? `${assetBase}/projects/ecommerce.jpg` : visual === "oasis" ? `${assetBase}/projects/wild-oasis.jpg` : visual === "phoenix" ? `${assetBase}/projects/phoenix.jpg` : null;
   return <div className={`project-visual project-visual-${visual}`}>
     {image && <Image src={image} alt={`${name} project visual`} fill sizes="(max-width: 760px) 100vw, 60vw" />}
     <div className="project-visual-shade" />

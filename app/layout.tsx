@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 const siteUrl = process.env.GITHUB_PAGES === 'true'
   ? 'https://tylnzgr.github.io/taylan-ozgur-portfolio/'
-  : 'https://taylan-ozgur-portfolio.shrewd-haven-4337.chatgpt.site/';
+  : 'https://taylan-ozgur-portfolio.tylnzgr.chatgpt.site/';
 const socialImage = new URL('og.png', siteUrl).toString();
 const favicon = new URL('favicon.svg', siteUrl).toString();
 
